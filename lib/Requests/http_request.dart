@@ -12,10 +12,8 @@ class Network {
     var url =
         "https://api.openweathermap.org/data/2.5/weather?q=$cityName&appid=$apiKey";
     final response = await get(Uri.parse(url));
-    // print("URL : ${Uri.encodeFull(url)}");
 
     if (response.statusCode == 200) {
-      // print("weather Data : ${response.body}");
       return CurrentWeatherModel.fromJson(json.decode(response.body));
     } else {
       throw Exception(
@@ -30,10 +28,8 @@ class Network {
     var url =
         "https://api.openweathermap.org/data/2.5/onecall?lat=$lat&lon=$lon&exclude=hourly,minutely,alerts,current&appid=$apiKey";
     final response = await get(Uri.parse(url));
-    // print("URL : ${Uri.encodeFull(url)}");
 
     if (response.statusCode == 200) {
-      // print("weather Data : ${response.body}");
       return SevenDaysForecastModel.fromJson(json.decode(response.body));
     } else {
       throw Exception(
