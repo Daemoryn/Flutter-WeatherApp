@@ -5,7 +5,7 @@ import 'package:weather_app/Models/current_weather_model.dart';
 import 'package:weather_app/Models/seven_days_forecast_model.dart';
 
 class Network {
-  String apiKey = "58101d2d51bc66a00fd456a323f75617";
+  // String apiKey = "";
 
   Future<CurrentWeatherModel> getCurrentWeatherFromCityName(
       {required String cityName}) async {
